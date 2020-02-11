@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'back' => 'back',
+    'Back' => 'Back',
+    'next' => 'next',
+    'Search' => 'Search',
+    'What are we looking for?' => 'What are we looking for?',
+    'Feedback' => 'Feedback',
+    'page' => 'page',
+    'Send' => 'Send',
+    'Write a comment' => 'Write a comment',
+    'comment_msg_alert' => 'Sorry, at the moment all the slots for comments are busy, but Your message is accepted and placed on the waiting list',
+    'previous page' => 'previous page',
+    'next page' => 'next page',
+    'first page' => 'first page',
+    'Search results' => 'Search results',
+    'Custom Search' => 'Custom Search',
+    'Publication Date' => 'Publication Date',
+    'Article Source' => 'Article Source',
+    'Share' => 'Share',
+    'Tag' => 'Tag',
+    'Top' => 'Top',
+    'Bottom' => 'Bottom',
+];
