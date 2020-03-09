@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.content')
+@extends('dashboard.dashboard.content')
 @include('widget.datatable-push-resources')
 
 @section('head_title') Users @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.app')
+@extends('dashboard.layouts.app')
 
 @section('main')
 
@@ -17,6 +17,7 @@
                         <a class="mdl-navigation__link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         <a class="mdl-navigation__link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @else
+                        @yield('lincks')
                         @yield('global-search-input')
                     @endguest
                 </nav>
@@ -25,15 +26,22 @@
         </header>
         @auth
             <div class="mdl-layout__drawer mdl-js-layout__drawer" id="main-right-side-menu" style="display: none;">
-                <span class="mdl-layout-title">MarketMebli</span>
+                <span class="mdl-layout-title">МаркетМеблі</span>
                 <nav class="mdl-navigation mdl-layout-spacer">
                     @if(\App\Models\User::hasRole(\App\Models\Datasets\UserRole::ADMIN))
 {{--                        <a href="{{ route('dashboard.index') }}" class="mdl-navigation__link">Dashboard</a>--}}
+
+                        <a href="{{ route('dashboard.product.index') }}" class="mdl-navigation__link">Продукти</a>
                         <a href="{{ route('dashboard.product-category.index') }}" class="mdl-navigation__link">Категорії продуктів</a>
+                        <a href="{{ route('dashboard.property.index') }}" class="mdl-navigation__link">Властивості</a>
+                        <a href="{{ route('dashboard.property-category.index') }}" class="mdl-navigation__link">Категорії властивостей</a>
+                        <a href="{{ route('dashboard.order_option.client_status.index') }}" class="mdl-navigation__link">Опції</a>
+                        <a href="{{ route('dashboard.client.index') }}" class="mdl-navigation__link">Клієнти</a>
+                        <a href="{{ route('dashboard.order.index') }}" class="mdl-navigation__link">Замовлення</a>
                         <hr>
                     @endif
                     <div class="mdl-layout-spacer"></div>
-                    <a class="mdl-navigation__link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                    <a class="mdl-navigation__link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Вийти') }}</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                 </nav>
             </div>
@@ -53,7 +61,7 @@
     <script>
         var dataTable;
         var tempDataTable = {};
-
+        var defaultUrl = '{{ url('') }}'
         var baseAdminImageUrl = '{{ url('').'/storage/' }}';
         var defaultImageUrl = '{{ asset('images/base/upload-image-default.png') }}';
         var storageUrl = '{{ asset('storage') }}';

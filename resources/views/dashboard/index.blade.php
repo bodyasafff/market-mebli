@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.content')
+@extends('dashboard.layouts.content')
 @include('widget.form.push-resources')
 
 @section('head_title') {{ config('app.name') }} @endsection

@@ -6,9 +6,9 @@ table{
     border-spacing: 0;
 }
 
-.hide-scroll::-webkit-scrollbar {
-    display: none !important;
-}
+/*.hide-scroll::-webkit-scrollbar {*/
+/*    display: none !important;*/
+/*}*/
 .hide-scroll{
     -ms-overflow-style: none !important;
     overflow: -moz-scrollbars-none !important;

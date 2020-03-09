@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.content')
+@extends('dashboard.dashboard.content')
 @include('widget.form.push-resources')
 
 @section('title_header'){{ $infoProc }}@endsection

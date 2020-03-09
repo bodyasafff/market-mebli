@@ -7,7 +7,7 @@
         </label>
     </div>
     <div class="mdl-dialog__actions" style="width: 100%">
-        <button class="mdl-button mdl-js-button close-btn">cancel</button>
+        <button class="mdl-button mdl-js-button close-btn" style="display: none">cancel</button>
 
         @if(!empty($isRemove))
             <button id="dialog-img-remove-btn" type="button" class="mdl-button mdl-js-button mdl-button--accent color-red" data-action="" data-id-img="" onclick="deleteImageDialog(this)">remove</button>

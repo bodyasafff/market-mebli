@@ -190,7 +190,9 @@ var dataTablesFunc = {
 
     inputFilter: {
         clickEventInit: function (dataTable, field, callback) {
+
             $('#'+field+'-filter-input').on('change', function (){
+                console.log(field);
                 var column = dataTable.column('.datatable-row-'+field+'-filter');
                 var val = $(this).val();
 

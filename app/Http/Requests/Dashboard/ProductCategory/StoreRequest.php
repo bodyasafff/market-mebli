@@ -29,10 +29,10 @@ class StoreRequest extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'name_ua' => 'nullable|string|min:5|max:100',
-            'name_ru' => 'nullable|string|min:5|max:100',
-            'name_pl' => 'nullable|string|min:5|max:100',
-            'name_en' => 'nullable|string|min:5|max:100',
+            'name_ua' => 'nullable|string|min:3|max:100',
+            'name_ru' => 'nullable|string|min:3|max:100',
+            'name_pl' => 'nullable|string|min:3|max:100',
+            'name_en' => 'nullable|string|min:3|max:100',
         ];
     }
 

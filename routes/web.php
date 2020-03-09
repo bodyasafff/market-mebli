@@ -15,9 +15,21 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('test', 'TestController@index');
 
-    Route::get('site.webmanifest', 'IndexController@webmanifest')
-        ->name('web.site.webmanifest');
-
     Route::get('', 'IndexController@index')
         ->name('home');
+
+    Route::group(['prefix' => 'product'], function (){
+        Route::get('{modelId}','ProductController@index')
+            ->where('modelId', '[0-9]+')
+            ->name('web.product.index');
+    });
+
+    Route::group(['prefix' => 'category'],function (){
+        Route::get('{modelId}','ProductCategoryController@index')
+            ->where('modelId', '[0-9]+')
+            ->name('web.product-category.index');
+
+        Route::get('{productCategoryId}/{idChekBoxes}/index-sort','ProductCategoryController@indexSort')->name('web.product-category.indexSort');
+    });
 });
+

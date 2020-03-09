@@ -36,7 +36,7 @@ h4, h5, h6{
 select,
 textarea,
 input {
-    -webkit-appearance: none;
+    /*-webkit-appearance: none;*/
     border: none;
     overflow: auto;
     outline: none;
@@ -87,7 +87,7 @@ table{
 
 /*-----------------------------*/
 
-.hide-scroll::-webkit-scrollbar { width: 0 }
+/*.hide-scroll::-webkit-scrollbar { width: 0 }*/
 .hide-scroll { overflow: -moz-scrollbars-none; }
 .hide-scroll { -ms-overflow-style: none; }
 .hide-scroll {scrollbar-width: none;}

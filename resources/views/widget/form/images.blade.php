@@ -1,9 +1,9 @@
 <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" id="items-card-photos-div" style="padding: 0; margin: 0; width: 100%;">
-    @if(!empty($model->{$id}))
-        @foreach($model->{$id} as $i => $item)
+    @if(!empty($model->data_product->{$id}))
+        @foreach($model->data_product->{$id} as $i => $item)
             @include('widget.form.wide-card-image', ['id' => $id, 'mdlCell' => $mdlCell,
                 'showDeleteButton' => true,
-                'src' => $item,
+                'src' => url('').'/storage/'.$item,
                 'i' => $i,
             ])
         @endforeach

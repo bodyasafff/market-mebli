@@ -351,9 +351,9 @@
 	resize:vertical
 }
 
-.jqte_editor::-webkit-scrollbar{
-	display: none;
-}
+/*.jqte_editor::-webkit-scrollbar{*/
+/*	display: none;*/
+/*}*/
 .jqte_editor{
 	-ms-overflow-style: none;
 	overflow: -moz-scrollbars-none;

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.content')
+@extends('dashboard.dashboard.content')
 @include('widget.form.push-resources')
 
 @section('head_title') {{ $model->id ? 'Edit User №'.$model->id : 'Create New User' }} @endsection

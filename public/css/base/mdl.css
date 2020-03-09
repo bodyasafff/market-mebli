@@ -1,5 +1,5 @@
 .mdl-layout__drawer::-webkit-scrollbar{
-    display: none;
+    /*display: none;*/
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link{

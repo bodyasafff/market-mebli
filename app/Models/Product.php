@@ -3,16 +3,24 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-class Product extends Model
+/**
+ * Class Product
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Product selectAll()
+ */
+class Product extends ModelBase
 {
     protected $table = 'products';
     public $timestamps = false;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
+    protected $casts = [
+        'id' => 'int',
+        'product_category_id' => 'int',
+        'sale_id' => 'int',
+    ];
+
     protected $fillable = [
-        'id',
         'product_category_id',
         'sale_id',
         'name_ua',
@@ -30,5 +38,10 @@ class Product extends Model
     public function data_product()
     {
         return $this->hasOne('App\Models\DataProduct','id','id');
+    }
+
+    public function properties()
+    {
+        return $this->belongsToMany(\App\Models\Property::class,'product_property','product_id','property_id');
     }
 }

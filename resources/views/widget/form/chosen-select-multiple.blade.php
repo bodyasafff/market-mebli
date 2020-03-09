@@ -2,7 +2,7 @@
     $optionName = !empty($optionName) ? $optionName : 'name';
 @endphp
 <div class="is-dirty mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{ !empty($mdlCell) ? 'mdl-cell mdl-cell--'.$mdlCell[0].'-col mdl-cell--'.$mdlCell[1].'-col-tablet mdl-cell--'.$mdlCell[2].'-col-phone' : ''}} capitalize-all chosen-select-multiple-div {{ !empty($cssClass) ? $cssClass : '' }}" style="{{ !empty($style) ? $style : '' }}">
-    <select class="mdl-textfield__input chosen-select" name="{{ $id }}[]" id="{{ $id }}" multiple>
+    <select class="mdl-textfield__input chosen-select" name="{{ $id }}[]" id="{{ isset($name) ? $name : $id }}" multiple>
         @foreach($options as $option)
             @if(!empty($group))
                 <optgroup label="{{ $option->{$optionName} }}">

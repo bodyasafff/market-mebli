@@ -14,6 +14,7 @@ class CheckIp
      */
     public function handle($request, Closure $next)
     {
+        return $next($request);
         if(in_array(request()->getClientIp(), [
             '91.213.187.137',
             '77.123.43.236',

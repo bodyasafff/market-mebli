@@ -1,4 +1,4 @@
-@include('widget.form.push-image-scripts');
+@include('widget.form.push-image-scripts')
 <div class="wide-card-image mdl-card {{ !empty($mdlCell) ? 'mdl-cell mdl-cell--'.$mdlCell[0].'-col mdl-cell--'.$mdlCell[1].'-col-tablet mdl-cell--'.$mdlCell[2].'-col-phone' : ''}}" style="min-height: 0; {{ !empty($styleBlock) ? $styleBlock : '' }}" id="{{ $id }}{{ isset($i) ? '_'.$i : '' }}_wide-card">
     @if(!empty($title))
         <div class="mdl-card__title">

@@ -80,5 +80,6 @@ class ProductCategoryController extends DashboardController
             $model->image = $imageName;
         }
         $model->save();
+        $model->property_categories()->sync($request->property_categories);
     }
 }

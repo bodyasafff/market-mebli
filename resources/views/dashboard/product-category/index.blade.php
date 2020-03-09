@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.content')
+@extends('dashboard.layouts.content')
 @section('title') Категорії продуктів @endsection
 
 @section('global-search-input')
@@ -22,7 +22,7 @@
 
         </div>
         <div class="base-data-table mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <table id="data-table" class="mdl-data-table mdl-js-data-table" ></table>
+            <table id="data-table" class="mdl-data-table mdl-js-data-table" style="width: 100%"></table>
         </div>
     </div>
 @endsection
@@ -30,9 +30,13 @@
 <style>
     .pagination{
         float: right;
+        margin-top: 30px;
     }
     .dataTables_processing{
         position: fixed;
+    }
+    .dataTables_length{
+        margin-top: 30px;
     }
 </style>
 @endpush
