@@ -10,6 +10,7 @@
 
 <h2>{{ trans('web.article') .' '. $product->id}}</h2>
 
+
 <h2>{{ trans('web.availability_in_stock') }}</h2>
 
 @include('web.widget.images-detail-product')
