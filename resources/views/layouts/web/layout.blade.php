@@ -1,8 +1,6 @@
 @extends('layouts.web.app')
 @php
-if(isset($_COOKIE['language'])){
 App::setLocale($_COOKIE['language']);
-}
 @endphp
 @section('layout')
     <body>
@@ -18,17 +16,22 @@ App::setLocale($_COOKIE['language']);
             <div class="head-icon">
                 <img  src="{{url('')}}./images/icon/person-icon.png">
                 <img  src="{{url('')}}./images/icon/basket-icon.png">
-                <img id="language-icon"  src="{{url('')}}./images/icon/languege-icon.png">
+                <div class="head-icon-language">
+                    <img id="language-icon"  src="{{url('')}}./images/icon/languege-icon.png">
+                    <div class="head-icon-language-button">
+                        <button onclick="transletePage(this)">en</button>
+                        <button onclick="transletePage(this)">ru</button>
+                        <button onclick="transletePage(this)">pl</button>
+                        <button onclick="transletePage(this)">ua</button>
+                    </div>
+                </div>
                 <img  src="{{url('')}}./images/icon/city-icon.png">
             </div>
             <input placeholder="{{trans('web.seacrh')}}" class="head-icons-search-input" type="text">
 
         </div>
     </div>
-    <button onclick="transletePage(this)">en</button>
-    <button onclick="transletePage(this)">ru</button>
-    <button onclick="transletePage(this)">pl</button>
-    <button onclick="transletePage(this)">ua</button>
+
     @yield('content')
     @endsection
     @push('css_base')
@@ -115,6 +118,7 @@ App::setLocale($_COOKIE['language']);
                 margin-top: 30px;
                 float: right;
                 margin-right: 2%;
+                display: flex;
             }
             .head-icon img {
                 cursor: pointer;
@@ -122,6 +126,40 @@ App::setLocale($_COOKIE['language']);
                 margin-left: 20px;
                 /*margin-left: calc((100% - 75px) * 0.25);*/
                 /*width: 25px;*/
+            }
+            .head-icon-language {
+                cursor: pointer;
+                width: 25px;
+                margin-left: 20px;
+                position: relative;
+            }
+
+            .head-icon-language img{
+                margin: 0;
+            }
+            .head-icon-language-button{
+                max-height: 0;
+                overflow: hidden;
+                position: absolute;
+                transition: 0.4s;
+            }
+            .head-icon-language:hover .head-icon-language-button {
+                max-height: 200px;
+            }
+            .head-icon-language-button button{
+                width: 30px;
+                text-align: center;
+                outline: none;
+                border: solid 3px transparent;
+                margin: 2px auto;
+                background: #817f83;
+                border-radius: 2px;
+                color: white;
+            }
+            .head-icon-language-button button:hover{
+                color: #2d2e2d;
+                background: #706e60;
+                
             }
 
         </style>
