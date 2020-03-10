@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'catalog_products' => 'catalog produtcs',
+    'seacrh' => 'Search',
+    'article' => 'Article',
+    'availability_in_stock' => 'Availability in stock',
+
     'back' => 'back',
     'Back' => 'Back',
     'next' => 'next',

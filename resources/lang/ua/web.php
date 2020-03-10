@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'catalog_products' => 'Каталог товаров',
-    'seacrh' => 'Поиск',
+    'catalog_products' => 'Каталог товарів',
+    'seacrh' => 'Пошук',
     'article' => 'Артикул',
-    'availability_in_stock' => 'Наличие на складе',
+    'availability_in_stock' => 'Наявність на складі',
+
 
     'back' => 'назад',
     'Back' => 'Назад',
