@@ -111,6 +111,7 @@ class ProductController extends DashboardController
 
     public function save(Request $request,Product $model)
     {
+        $request->availability_in_stock?$model->availability_in_stock = 1:$model->availability_in_stock = 0;
         foreach (Lang::all() as $lang){
             $model->{'name_'.$lang['id']} = $request->{'name_'.$lang['id']};
         }
