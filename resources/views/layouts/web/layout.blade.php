@@ -1,6 +1,11 @@
 @extends('layouts.web.app')
 @php
-App::setLocale($_COOKIE['language']);
+    if(isset($_COOKIE['language'])){
+   App::setLocale($_COOKIE['language']);
+   }
+else{
+   $_COOKIE['language'] = 'ua';
+   }
 @endphp
 @section('layout')
     <body>
@@ -11,7 +16,7 @@ App::setLocale($_COOKIE['language']);
             </a>
         </div>
         <div class="head-icons">
-            <input type="button" class="catalog-products-btn" value="{{ trans('web.catalog_products')}}">
+            <input type="button" class="catalog-products-btn" id="product_catalog" value="{{ trans('web.catalog_products')}}">
             <div class="head-icons-phone">+38(099) 569-87-45</div>
             <div class="head-icon">
                 <img  src="{{url('')}}./images/icon/person-icon.png">
@@ -33,7 +38,30 @@ App::setLocale($_COOKIE['language']);
     </div>
 
     @yield('content')
+
+        <div class="footer">
+            <div class="share_line"></div>
+            <div class="footer_info">
+                <div class="footer_address">{{trans('web.footer_address')}}</div>
+                <div class="footer_mail">marketMebli.gmail.com</div>
+                <div class="footer_work_schedule">
+                    <div class="footer_work_schedule_weekdays">8:00 - 19:00</div>
+                    <div class="footer_work_schedule_weekend">{{trans('web.sat')}}: 8:00 - 15:00</div>
+                    <div class="footer_work_schedule_weekend">{{trans('web.sun')}}: 8:00 - 15:00</div>
+                </div>
+                <div class="footer_social_networks">
+                    <a href="https://www.instagram.com/?hl=ru"><img src="{{url('')}}./images/icon/instagram-icon.png"></a>
+                    <a href="https://www.facebook.com/"><img src="{{url('')}}./images/icon/facebook-icon.png"></a>
+                </div>
+                <div class="footer_privacy_policy">
+                    politika konfedencinosti  politika konfedencinosti  politika konfedencinosti politika konfedencinosti  politika konfedencinosti  politika konfedencinosti
+                </div>
+            </div>
+        </div>
     @endsection
+
+
+
     @push('css_base')
         <script src="{{ asset('js/plugins/jquery-3.4.1.min.js') }}"></script>
     @endpush
@@ -161,6 +189,47 @@ App::setLocale($_COOKIE['language']);
                 background: #706e60;
                 
             }
-
+            .footer{
+                height: 250px;
+            }
+            .share_line{
+                width: 100%;
+                height: 2px;
+                background-color: gray;
+            }
+            .footer_info{
+                margin-left: 25%;
+                width: 50%;
+            }
+            .footer_address{
+                margin-top: 25px;
+                text-align: center;
+            }
+            .footer_mail{
+                text-align: center;
+                margin-top: 10px;
+            }
+            .footer_work_schedule{
+                text-align: center;
+            }
+            .footer_work_schedule_weekdays{
+                margin-top: 20px;
+            }
+            .footer_work_schedule_weekend{
+                display: inline;
+            }
+            .footer_social_networks{
+                text-align: center;
+            }
+            .footer_social_networks img{
+                margin: 10px 25px;
+                width: 35px;
+                cursor: pointer;
+            }
+            .footer_privacy_policy{
+                text-align: center;
+                font-size: 12px;
+                margin-top: 10px;
+            }
         </style>
     @endpush

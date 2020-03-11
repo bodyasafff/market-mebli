@@ -16,6 +16,11 @@
             'cssClass' => 'search-choise-block',
         ])
 
+        @include('widget.form.chosen-select-single', ['id' => 'parent_product_category_id', 'title' => 'Батькывська категорія', 'mdlCell' => [3, 4, 2],
+         'options' => \App\Models\ProductCategory::select(['id','name_ua'])->get()->prepend((object)['id' => '', 'name_ua' => '']),
+         'optionName' => 'name_ua',
+         ])
+
     @foreach(\App\Models\Datasets\Lang::all() as $lang)
         @include('widget.form.textarea', ['id' => 'name_'.$lang['id'], 'title' => 'Назва ('.$lang['id'].')', 'mdlCell' => [12, 8, 4], 'maxlength' => 255])
     @endforeach

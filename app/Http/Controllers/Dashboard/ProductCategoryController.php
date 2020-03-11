@@ -58,6 +58,7 @@ class ProductCategoryController extends DashboardController
     }
 
     public function save(Request $request,ProductCategory $model){
+        $model->parent_product_category_id = $request->parent_product_category_id;
         foreach (Lang::all() as $lang){
             $model->{'name_'.$lang['id']} = $request->{'name_'.$lang['id']};
         }

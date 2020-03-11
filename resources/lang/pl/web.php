@@ -5,6 +5,11 @@ return [
     'seacrh' => 'Szukaj',
     'article' => 'Artykuł',
     'availability_in_stock' => 'Dostępność w magazynie',
+    'available' => 'Dostępność',
+    'not_available' => 'Ne Dostępność',
+    'footer_address' => 'Rivne ul.Kyivska',
+    'sat' => 'so',
+    'sun' => 'n',
 
     'back' => 'назад',
     'Back' => 'Назад',

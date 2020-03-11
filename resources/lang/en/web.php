@@ -1,10 +1,16 @@
 <?php
 
 return [
-    'catalog_products' => 'catalog produtcs',
+    'catalog_products' => 'Catalog produtcs',
     'seacrh' => 'Search',
     'article' => 'Article',
     'availability_in_stock' => 'Availability in stock',
+    'available' => 'Available',
+    'not_available' => 'Not available',
+    'footer_address' => 'Rivne St.Kyivska',
+    'sat' => 'sat',
+    'sun' => 'sun',
+
 
     'back' => 'back',
     'Back' => 'Back',

@@ -16,6 +16,7 @@ class ProductCategory extends ModelBase
 
     protected $fillable = [
         'id',
+        'parent_product_category_id',
         'name_ua',
         'name_ru',
         'name_pl',
@@ -26,6 +27,21 @@ class ProductCategory extends ModelBase
     public function products()
     {
         return $this->hasMany('App\Models\Product','product_category_id','id');
+    }
+
+    public function parent_product_category()
+    {
+        return $this->hasOne('App\Models\ProductCategory','id','parent_product_category_id');
+    }
+
+    public function  children_product_categories()
+    {
+        return $this->hasMany('App\Models\ProductCategory','parent_product_category_id','id');
+    }
+
+    public function all_children_product_categories()
+    {
+        return $this->children_product_categories()->with('all_children_product_categories');
     }
 
     public function property_categories()

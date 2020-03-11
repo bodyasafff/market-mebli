@@ -42,7 +42,10 @@
                 @endif
             </div>
         @endforeach
-
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-grid">
+            <div>В наявності</div>
+        <input type="checkbox" name="availability_in_stock" {{$model->availability_in_stock?'checked':''}}>
+        </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid">
 
                 @include('widget.form.wide-card-image', ['id' => 'image', 'mdlCell' => [4, 8, 4],
