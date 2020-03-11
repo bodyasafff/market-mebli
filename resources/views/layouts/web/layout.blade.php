@@ -1,11 +1,13 @@
 @extends('layouts.web.app')
 @php
+
     if(isset($_COOKIE['language'])){
    App::setLocale($_COOKIE['language']);
    }
 else{
    $_COOKIE['language'] = 'ua';
    }
+
 @endphp
 @section('layout')
     <body>
@@ -19,10 +21,10 @@ else{
             <input type="button" class="catalog-products-btn" id="product_catalog" value="{{ trans('web.catalog_products')}}">
             <div class="head-icons-phone">+38(099) 569-87-45</div>
             <div class="head-icon">
-                <img  src="{{url('')}}./images/icon/person-icon.png">
-                <img  src="{{url('')}}./images/icon/basket-icon.png">
+                <img src="{{url('')}}./images/icon/person-icon.png">
+                <img src="{{url('')}}./images/icon/basket-icon.png">
                 <div class="head-icon-language">
-                    <img id="language-icon"  src="{{url('')}}./images/icon/languege-icon.png">
+                    <img id="language-icon" src="{{url('')}}./images/icon/languege-icon.png">
                     <div class="head-icon-language-button">
                         <button onclick="transletePage(this)">en</button>
                         <button onclick="transletePage(this)">ru</button>
@@ -30,7 +32,7 @@ else{
                         <button onclick="transletePage(this)">ua</button>
                     </div>
                 </div>
-                <img  src="{{url('')}}./images/icon/city-icon.png">
+                <img src="{{url('')}}./images/icon/city-icon.png">
             </div>
             <input placeholder="{{trans('web.seacrh')}}" class="head-icons-search-input" type="text">
 
@@ -69,7 +71,7 @@ else{
     @push('js')
         <script>
             function transletePage(t) {
-                document.cookie = 'language='+ t.innerHTML;
+                document.cookie = 'language=' + t.innerHTML;
                 location.reload();
             }
 
@@ -80,6 +82,7 @@ else{
             .head {
                 height: 90px;
             }
+
             .head-logo {
                 float: left;
                 width: 20%;
@@ -107,7 +110,8 @@ else{
                 background-color: #2d2e2d;
                 width: 80%;
             }
-            .catalog-products-btn{
+
+            .catalog-products-btn {
                 /*width: 10%;*/
                 margin-left: 2%;
                 margin-top: 25px;
@@ -117,17 +121,20 @@ else{
                 padding: 5px 10px;
                 border-radius: 15px;
             }
-            .catalog-products-btn:hover{
+
+            .catalog-products-btn:hover {
                 background-color: white;
                 color: #2d2e2d;
                 transition: 0.3s;
             }
-            .head-icons-phone{
+
+            .head-icons-phone {
                 color: white;
                 float: right;
                 margin-top: 30px;
                 margin-right: 2%;
             }
+
             .head-icons-search-input {
                 float: right;
                 cursor: pointer;
@@ -142,12 +149,14 @@ else{
             .head-icons-search-input::-webkit-input-placeholder {
                 color: #1f1b1b;
             }
-            .head-icon{
+
+            .head-icon {
                 margin-top: 30px;
                 float: right;
                 margin-right: 2%;
                 display: flex;
             }
+
             .head-icon img {
                 cursor: pointer;
                 width: 25px;
@@ -155,6 +164,7 @@ else{
                 /*margin-left: calc((100% - 75px) * 0.25);*/
                 /*width: 25px;*/
             }
+
             .head-icon-language {
                 cursor: pointer;
                 width: 25px;
@@ -162,19 +172,22 @@ else{
                 position: relative;
             }
 
-            .head-icon-language img{
+            .head-icon-language img {
                 margin: 0;
             }
-            .head-icon-language-button{
+
+            .head-icon-language-button {
                 max-height: 0;
                 overflow: hidden;
                 position: absolute;
                 transition: 0.4s;
             }
+
             .head-icon-language:hover .head-icon-language-button {
                 max-height: 200px;
             }
-            .head-icon-language-button button{
+
+            .head-icon-language-button button {
                 width: 30px;
                 text-align: center;
                 outline: none;
@@ -184,10 +197,10 @@ else{
                 border-radius: 2px;
                 color: white;
             }
-            .head-icon-language-button button:hover{
+
+            .head-icon-language-button button:hover {
                 color: #2d2e2d;
                 background: #706e60;
-                
             }
             .footer{
                 height: 250px;
