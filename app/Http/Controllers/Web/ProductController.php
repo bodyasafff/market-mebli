@@ -71,6 +71,7 @@ class ProductController extends WebController
             $item['name'] = $item->first()->first()->property_category->group->name;
             return $item;
         });
+
         return view('web.product.details', ['product' => $model,'properties' => $collection,'product_categories' => $product_categories_collection]);
     }
 }
