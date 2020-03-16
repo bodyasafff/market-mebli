@@ -22,7 +22,7 @@ else{
             <div class="head-icons-phone">+38(099) 569-87-45</div>
             <div class="head-icon">
                 <img src="{{url('')}}./images/icon/person-icon.png">
-                <img src="{{url('')}}./images/icon/basket-icon.png">
+                <img src="{{url('')}}./images/icon/basket-icon.png" id="basket-icon">
                 <div class="head-icon-language">
                     <img id="language-icon" src="{{url('')}}./images/icon/languege-icon.png">
                     <div class="head-icon-language-button">

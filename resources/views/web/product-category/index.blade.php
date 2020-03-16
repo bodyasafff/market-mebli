@@ -1,4 +1,4 @@
-@inc
+
 @extends('layouts.web.layout')
 @section('content')
     <div class="container-fluid" style="margin-top: 50px">

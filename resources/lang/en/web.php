@@ -10,6 +10,8 @@ return [
     'footer_address' => 'Rivne St.Kyivska',
     'sat' => 'sat',
     'sun' => 'sun',
+    'buy' => 'Buy',
+    'basket' => 'Basket',
 
 
     'back' => 'back',
