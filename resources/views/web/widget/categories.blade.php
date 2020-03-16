@@ -13,9 +13,20 @@
 <style>
     .a-category{
         color: black;
+        display: block;
+        text-decoration: none;
+        outline: none;
     }
+    .a-category:hover{
+        background: #d7b2ba;
+        color: black;
+    }
+    .a-category label{
+        padding: 5px 20px;
+        margin-bottom: 0;
+    }
+
     .label-category{
         cursor: pointer;
-        border: solid black 1px;
     }
 </style>
