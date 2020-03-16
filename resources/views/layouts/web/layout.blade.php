@@ -199,18 +199,39 @@ else{
             }
 
             .header > svg {
-                width: 89px;
-                height: 75px;
+                width: 85px;
             }
-            .header h5{
+
+            .header h5 {
+                margin: 0;
                 font-weight: 900;
-                font-size: 30px;
+                font-size: 28px;
+                margin-left: 20px;
                 line-height: 34px;
                 color: #FFC531;
             }
-            .header input{
+
+            .header input {
                 background: #EFEFEF;
                 border-radius: 40px;
             }
+
+            .header-search {
+                align-self: center;
+                /*348px= icon + "name" + "3 * svg(cart,account,lang)"*/
+                width: calc(80% - 348px);
+                margin: auto 10%;
+                height: 40px;
+            }
+
+            .header-svg-icons {
+                display: flex;
+                align-items: center;
+            }
+
+            .header-svg-icons > div {
+                margin-left: 15px;
+            }
+
         </style>
     @endpush
