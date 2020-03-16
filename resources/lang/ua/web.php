@@ -5,7 +5,11 @@ return [
     'seacrh' => 'Пошук',
     'article' => 'Артикул',
     'availability_in_stock' => 'Наявність на складі',
-
+    'available' => 'В наявності',
+    'not_available' => 'Не в наявності',
+    'footer_address' => 'м.Рівне вул.Київська',
+    'sat' => 'суб',
+    'sun' => 'нед',
 
     'back' => 'назад',
     'Back' => 'Назад',

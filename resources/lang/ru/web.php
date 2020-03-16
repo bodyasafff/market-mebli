@@ -5,6 +5,11 @@ return [
     'seacrh' => 'Поиск',
     'article' => 'Артикул',
     'availability_in_stock' => 'Наличие на складе',
+    'available' => 'В наличии',
+    'not_available' => 'Не в наличии',
+    'footer_address' => 'г.Ровно ул.Киевская',
+    'sat' => 'суб',
+    'sun' => 'воск',
 
     'back' => 'назад',
     'Back' => 'Назад',

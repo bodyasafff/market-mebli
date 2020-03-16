@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'back' => '上一页',
+    'Back' => '上一页',
+    'next' => '下一页',
+    'Search' => '搜索',
+    'What are we looking for?' => '我们在找什么',
+    'Feedback' => '意见反馈',
+    'page' => '页',
+    'Send' => '发送',
+    'Write a comment' => '留下评论',
+    'comment_msg_alert' => '抱歉，目前所有评论位都忙，但是您的消息已接受并排队',
+    'previous page' => '上一页',
+    'next page' => '下一页',
+    'first page' => '第一页',
+    'Search results' => '搜索结果',
+    'Custom Search' => '自订搜寻',
+    'Publication Date' => '发布日期',
+    'Article Source' => '文章来源',
+    'Share' => '将分享',
+    'Tag' => '标签',
+    'Top' => '上',
+    'Bottom' => '下',
+];

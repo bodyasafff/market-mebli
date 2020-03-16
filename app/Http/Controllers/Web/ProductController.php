@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Web\WebController;
+use App\Models\ProductCategory;
 use Illuminate\Database\Eloquent\Collection;
 use App\Http\Requests\Dashboard\Product\StoreRequest;
 use App\Models\DataProduct;
@@ -41,6 +42,16 @@ class ProductController extends WebController
             abort(404);
         }
 
+        $product_categories = ProductCategory::with('all_children_product_categories')->get();
+        $product_categories_collection = collect([]);
+        foreach ($product_categories as $product_category){
+            if($product_category->parent_product_category_id == null){
+                $product_categories_collection->push($product_category);
+            }
+        }
+//        dd($product_categories_collection->toArray());
+
+        //====================
         $collection = collect($model->properties)->sortBy('property_category.group.value')->reverse()->groupBy('property_category.group.id');
 
         $collection->transform(function ($item){
@@ -60,6 +71,6 @@ class ProductController extends WebController
             $item['name'] = $item->first()->first()->property_category->group->name;
             return $item;
         });
-        return view('web.product.details', ['product' => $model,'properties' => $collection]);
+        return view('web.product.details', ['product' => $model,'properties' => $collection,'product_categories' => $product_categories_collection]);
     }
 }
