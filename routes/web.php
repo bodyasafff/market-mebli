@@ -31,5 +31,9 @@ Route::group(['namespace' => 'Web'], function () {
 
         Route::get('{productCategoryId}/{idChekBoxes}/index-sort','ProductCategoryController@indexSort')->name('web.product-category.indexSort');
     });
+
+    Route::group(['prefix' => 'basket'],function (){
+        Route::get('{productsId}/index','BasketController@index')->name('web.basket.index');
+    });
 });
 

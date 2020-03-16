@@ -10,20 +10,6 @@ else{
 @endphp
 @section('layout')
     <body>
-    <header>
-        <div class="header-info">
-            <div class="header-info-link">
-                <a href="#">Доставка</a>
-                <a href="#">Оплата</a>
-                <a href="#">Отзывы</a>
-                <a href="#">Вопрос-ответ</a>
-                <a href="#">Контакты</a>
-            </div>
-            <div class="header-info-phone">
-                <p>Тел:
-                    <span>8 (812) 123-45-67</span>
-                    <span>8 (812) 123-45-67</span>
-                </p>
             </div>
         </div>
         <div class="header">

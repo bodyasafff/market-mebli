@@ -7,7 +7,11 @@
     $_COOKIE['language'] = 'ua';
     }
 @endphp
+
+
 @section('content')
+    @include('web.widget.pop-up-basket')
+
     @include('web.widget.pop-up-product-catalog')
     <div class="product-container">
         <div class="product-header">
@@ -21,6 +25,12 @@
             </div>
             <div class="product-content-info">
                 <div class="product-content-info-container">
+
+                    <div>
+                        <p class="product-price">{{ $product->price }}</p>
+                        <button class="product-content-button-buy" onclick="addToBasket({{$product->id}})">Купити</button>
+                        <div>{{ $product->availability_in_stock == 1? trans('web.available') :trans('web.not_available')}}</div>
+
                     <div class="product-content-detail-info">
                         <div class="detail-info-price-container">
                             <div>
@@ -53,6 +63,7 @@
                                 <button class="product-content-button-buy-one-click">Купити in one click</button>
                             </div>
                         </div>
+
                     </div>
                     <div class="product-content-detail-info">
                         <select class="delivery-select">
@@ -72,11 +83,51 @@
             </div>
         </div>
     </div>
+
+@endsection
+@push('js')
+    <script>
+        $("#product_catalog").on('click',function () {
+            $("#pop-up-product-catalog-close-div").attr('class', 'pop-up-product-catalog-close-div-visibilty');
+            $("#close-pop-up-btn").attr('class', 'close-pop-up-btn');
+            document.getElementById("pop-up-product-catalog").open = true;
+        })
+
+        $("#basket-icon").on('click',function () {
+            $("#pop-up-basket-close-div").attr('class', 'pop-up-basket-close-div-visibilty');
+            document.getElementById("pop-up-basket").open = true;
+        })
+
+        function addToBasket(productId) {
+            var temp = localStorage.getItem('basketProducts');
+            if(temp) {
+                temp = temp.split(',');
+                var flag = false;
+                for (let i = 0; i < temp.length; i++) {
+                    if (temp[i] == productId) {
+                        flag = true;
+                    }
+                }
+                if (flag == false) {
+                    temp.push(productId);
+                }
+                temp = temp.join(',');
+                localStorage.setItem('basketProducts',temp);
+            }
+            else{
+                localStorage.setItem('basketProducts',productId);
+            }
+        }
+
+    </script>
+@endpush
+
     {{--  TODO: inStock
                                   <p class="product-stock">{{ trans('web.availability_in_stock') }}</p>
                                   <div>{{ $product->availability_in_stock == 1? trans('web.available') :trans('web.not_available')}}</div>
     --}}
 @endsection
+
 @push('css')
     <style>
         .product-container {
@@ -267,6 +318,7 @@
         }
     </style>
 @endpush
+
 @push('js')
     <script>
         function openDialogWindowCatalog() {
@@ -277,3 +329,4 @@
         };
     </script>
 @endpush
+

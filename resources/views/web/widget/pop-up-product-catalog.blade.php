@@ -3,7 +3,7 @@
 
 <dialog id="pop-up-product-catalog" class="product-catalog-dialog">
     <div class="parent_product_categories_div">
-        <div class="parent_product_categories_div_head">каталог товарів</div>
+        <div class="parent_product_categories_div_head">{{trans('web.catalog_products')}}</div>
         @foreach($product_categories as $product_category)
             <div class="parent_product_categories_div_item">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -103,8 +103,17 @@
             margin-left: 15%;
         }
 
+
+        .product-catalog-dialog{
+            width: 98%;
+            height: 100vh;
+            margin-top: 30px;
+            /*background-color: #aba69a;*/
+            border: solid 0px white;
+
         .parent_product_categories_div_item:hover {
             background-color: #ffc6c1;
+
         }
 
         .product-catalog-dialog {
@@ -118,6 +127,23 @@
         .pop-up-product-catalog-close-div-visibilty {
             z-index: 10;
             width: 100%;
+
+            height: 100vh;
+            background-color: rgba(0,0,0,0.2);
+            position: absolute;
+        }
+        /*.close-pop-up-btn{*/
+        /*    color: #d60e00;*/
+        /*    float: right;*/
+        /*    margin-top: 40px;*/
+        /*    padding: 10px 15px;*/
+        /*    font-size: 20px;*/
+        /*    background-color: rgba(0,0,0,0);*/
+        /*    border: solid 0px black;*/
+        /*}*/
+        .close-pop-up-btn:hover{
+            background-color: rgba(0,0,0,0.6);
+
             height: 100%;
             background-color: rgba(0, 0, 0, 0.4);
             position: absolute;
@@ -156,6 +182,7 @@
             display: none;
             box-sizing: initial;
             transform: translateX(calc(100% + 1px));
+
             transition: 0.3s;
         }
 

@@ -10,6 +10,8 @@ return [
     'footer_address' => 'Rivne ul.Kyivska',
     'sat' => 'so',
     'sun' => 'n',
+    'buy' => 'Kupić',
+    'basket' => 'Koszyk',
 
     'back' => 'назад',
     'Back' => 'Назад',
